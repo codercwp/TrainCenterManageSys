@@ -1,10 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Route;
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
+
 /**
  * @author caiwenpin <github.com/codercwp>
  */
@@ -27,16 +22,12 @@ Route::prefix('/fill')->namespace('Fill')->group(function () {
 
     Route::get('showall','CheckController@showAll');  //粗略展示一张表单中所有期末教学记录检查
     Route::get('showone','CheckController@showOne');  //期末教学记录检查其中的某条详情
-
-
     Route::get('teachback','WriteController@teachBack'); //把所有实验室名称给前端
     Route::get('teachmove','WriteController@teachMove'); //把所有实验室名称给前端
     Route::post('teachadd','WriteController@teachAdd'); //添加期末教学记录检查
 
 });
 
-
-Route::get('test','TestController@test');
 /**
  * @author tangshengyou
  * 填报 功能耶，表单列表的的回显
@@ -56,7 +47,6 @@ Route::group(['namespace'=>'Fill','prefix'=>'fill'],function(){
     Route::get('checkboxequipment','ShowController@CheckBoxEquipment');
     //设备借用填报
     Route::post('equipmentborrowing','DealFromController@EquipmentBorrowing');
-
 });
 
 
@@ -65,12 +55,12 @@ Route::prefix('report')->namespace('Fill')->group(function(){
     Route::get('nameview','OperationReportController@nameView');//申请人回显
     Route::get('classdrop','OperationReportController@classDrop');//专业班级下拉框
     Route::get('laboratorydrop','OperationReportController@laboratoryDrop');//实验室下拉框
-});//--lzz
+});
 
 
 Route::prefix('view')->namespace('Fill')->group(function(){
     Route::get('formview','OperationReportController@formView');//实验室运行记录填报
-});//--lzz
+});
 
 /**
  * @author HuWeiChen <github.com/nathaniel-kk>
@@ -95,6 +85,9 @@ Route::prefix('fill')->namespace('Fill')->group(function () {
 
 Route::get('test','TestController@test');
 
+/**
+ * @author yuanshuxin <github.com/CoderYsx>
+ */
 Route::prefix('site')->namespace('DataScreen')->group(function (){
     Route::get('/showxibu','SiteScreenController@xibuborrow');
     Route::get('/usingsite','SiteScreenController@usingsite');
@@ -104,6 +97,9 @@ Route::prefix('site')->namespace('DataScreen')->group(function (){
 
 });
 
+/**
+ * @author yuanshuxin <github.com/CoderYsx>
+ */
 Route::prefix('check')->namespace('DataScreen')->group(function (){
     Route::get('/safecheck','CheckController@SafeCheck');
     Route::get('/checkcount','CheckController@checkcount');
@@ -111,6 +107,9 @@ Route::prefix('check')->namespace('DataScreen')->group(function (){
 });
 
 
+/**
+ * @author zhuxianglin <github.com/lybbor>
+ */
 Route::prefix('eqlen')->namespace('DataScreen')->group(function(){
     Route::get('recentwait','EquipmentLendController@recentWait');
     Route::get('recentlend','EquipmentLendController@recentLend');
@@ -121,9 +120,13 @@ Route::prefix('eqlen')->namespace('DataScreen')->group(function(){
 
 });
 
+/**
+ * @author zhuxianglin <github.com/lybbor>
+ */
 Route::prefix('check')->namespace('DataScreen')->group(function(){
     Route::get('checkedlab','EquipmentLendController@checkedLab');
     Route::get('teachercheck','EquipmentLendController@teacherCheck');
+});
 
 /**
  * @author yangsiqi <github.com/Double-R111>
@@ -151,6 +154,4 @@ Route::prefix('approval')->namespace('Approval')->group(function () {//审批展
 Route::prefix('approval')->namespace('Approval')->group(function(){
     Route::get('pass','ExamController@pass');//审核通过
     Route::post('noPass','ExamController@noPass');//审核不通过
-
 });
-
