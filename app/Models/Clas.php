@@ -109,7 +109,7 @@ class Clas extends Model
     public static function tby_findClass($tby)
     {
         try{
-            $date=clas::where('class_name',$tby['class_name'])
+            $date=clas::where('class_name','like','%'.$tby['class_name'].'%')
                 ->paginate(5);
             return $date;
         }catch (Exception $e){

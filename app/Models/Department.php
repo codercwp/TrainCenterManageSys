@@ -105,7 +105,7 @@ class Department extends Model
     public static function tby_findDepartment($tby)
     {
         try{
-            $date=department::where('department_name',$tby['department_name'])
+            $date=department::where('department_name','like','%'.$tby['department_name'].'%')
                 ->paginate(5);
             return $date;
         }catch (Exception $e){
