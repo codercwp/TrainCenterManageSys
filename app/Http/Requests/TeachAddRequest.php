@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class ShowAllRequest extends FormRequest
+class TeachAddRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,13 +25,17 @@ class ShowAllRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'form_id'=>'required|String',
-        ];
+//        return [
+//            'laboratory_id' => 'required|Integer',
+//            'class_name'=> 'required|String',
+//            'teacher' =>'required|String',
+//            'teach_operating_condition' =>'required|String',
+//            'operating_condition' =>'required|String',
+//            'remark' =>'required|String',
+//        ];
     }
     protected function failedValidation(Validator $validator)
     {
         throw (new HttpResponseException(json_fail('参数错误!',$validator->errors()->all(),422)));
-
     }
 }
