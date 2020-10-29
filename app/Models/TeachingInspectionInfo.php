@@ -31,8 +31,8 @@ class TeachingInspectionInfo extends Model
                 ->where('teaching_inspection_info.form_id',$form_id)
                 ->get();
             $data2=Form::cmm_teaRecordDisplayInfo($form_id);
-            $data['data1']=$data1;
-            $data['data2']=$data2;
+            $data['forminfo']=$data1;
+            $data['reocrd_info']=$data2;
             return $data;
         }catch (\Exception $e){
             logError('获取开放实验室申请表信息错误',[$e->getMessage()]);

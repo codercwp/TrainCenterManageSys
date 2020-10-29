@@ -37,7 +37,7 @@ class Form extends Model
             $data=self::select('form_id','applicant_name','updated_at')
                 ->where('type_id',1)
                 ->whereIn('form_status',[2,4,6,8,11])
-                ->get();
+                ->paginate(6);
             return $data;
         }catch (\Exception $e){
             logError('实验室借用申请表展示错误',[$e->getMessage()]);
@@ -77,18 +77,14 @@ class Form extends Model
      */
     Public static function cm_labBorSelect($form_id){
         try{
-            $data0=self::select('form_id','applicant_name','updated_at')
+            $data=self::select('form_id','applicant_name','updated_at')
                 ->where('type_id',1)
                 ->whereIn('form_status',[2,4,6,8,11])
-                ->Where('form_id','like','%'.$form_id.'%')
-                ->get();
-            $data1=self::select('form_id','applicant_name','updated_at')
-                ->where('type_id',1)
-                ->whereIn('form_status',[2,4,6,8,11])
-                ->where('applicant_name','like','%'.$form_id.'%')
-                ->get();
-            $data['data1']=$data0;
-            $data['data2']=$data1;
+                ->where('form_id',$form_id)
+                ->orWhere('form_id','like','%'.$form_id.'%')
+                ->where('applicant_name',$form_id)
+                ->orWhere('applicant_name','like','%'.$form_id.'%')
+                ->paginate(6);
             return $data;
         }catch (\Exception $e){
             logError('实验室借用申请表搜索展示错误',[$e->getMessage()]);
@@ -129,7 +125,7 @@ class Form extends Model
             $data=self::select('form_id','applicant_name','updated_at')
                 ->where('type_id',2)
                 ->whereIn('form_status',[2,4,6,8,11])
-                ->get();
+                ->paginate(6);
             return $data;
         }catch (\Exception $e){
             logError('开放实验室使用申请表展示错误',[$e->getMessage()]);
@@ -146,18 +142,14 @@ class Form extends Model
      */
     Public static function cm_labOpenSelect($form_id){
         try{
-            $data0=self::select('form_id','applicant_name','updated_at')
+            $data=self::select('form_id','applicant_name','updated_at')
                 ->where('type_id',2)
                 ->whereIn('form_status',[2,4,6,8,11])
-                ->Where('form_id','like','%'.$form_id.'%')
-                ->get();
-            $data1=self::select('form_id','applicant_name','updated_at')
-                ->where('type_id',2)
-                ->whereIn('form_status',[2,4,6,8,11])
-                ->where('applicant_name','like','%'.$form_id.'%')
-                ->get();
-            $data['data1']=$data0;
-            $data['data2']=$data1;
+                ->where('form_id',$form_id)
+                ->orWhere('form_id','like','%'.$form_id.'%')
+                ->where('applicant_name',$form_id)
+                ->orWhere('applicant_name','like','%'.$form_id.'%')
+                ->paginate(6);
             return $data;
         }catch (\Exception $e){
             logError('开放实验室使用申请表搜索展示错误',[$e->getMessage()]);
@@ -175,7 +167,7 @@ class Form extends Model
             $data=self::select('form_id','applicant_name','updated_at')
                 ->where('type_id',3)
                 ->whereIn('form_status',[2,4,6,8,11])
-                ->get();
+                ->paginate(6);
             return $data;
         }catch (\Exception $e){
             logError('实验室仪器借用申请表展示错误',[$e->getMessage()]);
@@ -192,18 +184,14 @@ class Form extends Model
      */
     Public static function cm_labEquipSelect($form_id){
         try{
-            $data0=self::select('form_id','applicant_name','updated_at')
+            $data=self::select('form_id','applicant_name','updated_at')
                 ->where('type_id',3)
                 ->whereIn('form_status',[2,4,6,8,11])
-                ->Where('form_id','like','%'.$form_id.'%')
-                ->get();
-            $data1=self::select('form_id','applicant_name','updated_at')
-                ->where('type_id',3)
-                ->whereIn('form_status',[2,4,6,8,11])
-                ->where('applicant_name','like','%'.$form_id.'%')
-                ->get();
-            $data['data1']=$data0;
-            $data['data2']=$data1;
+                ->where('form_id',$form_id)
+                ->orWhere('form_id','like','%'.$form_id.'%')
+                ->where('applicant_name',$form_id)
+                ->orWhere('applicant_name','like','%'.$form_id.'%')
+                ->paginate(6);
             return $data;
         }catch (\Exception $e){
             logError('实验室仪器借用申请表搜索展示错误',[$e->getMessage()]);
@@ -429,7 +417,7 @@ class Form extends Model
             $data=self::select('form_id','applicant_name','updated_at')
                 ->where('type_id',4)
                 ->whereIn('form_status',[2,4,6,8,11])
-                ->get();
+                ->paginate(5);
             return $data;
         }catch (\Exception $e){
             logError('期末教学记录检查表展示错误',[$e->getMessage()]);
@@ -446,18 +434,14 @@ class Form extends Model
      */
     Public static function cm_teaRecordSelect($form_id){
         try{
-            $data0=self::select('form_id','applicant_name','created_at')
+            $data=self::select('form_id','applicant_name','created_at')
                 ->where('type_id',4)
                 ->whereIn('form_status',[2,4,6,8,11])
-                ->Where('form_id','like','%'.$form_id.'%')
-                ->get();
-            $data1=self::select('form_id','applicant_name','created_at')
-                ->where('type_id',4)
-                ->whereIn('form_status',[2,4,6,8,11])
-                ->where('applicant_name','like','%'.$form_id.'%')
-                ->get();
-            $data['data1']=$data0;
-            $data['data2']=$data1;
+                ->where('form_id',$form_id)
+                ->orWhere('form_id','like','%'.$form_id.'%')
+                ->where('applicant_name',$form_id)
+                ->orWhere('applicant_name','like','%'.$form_id.'%')
+                ->paginate(6);
             return $data;
         }catch (\Exception $e){
             logError('期末教学记录检查表页面搜索展示错误',[$e->getMessage()]);

@@ -13,7 +13,6 @@ class EquipmentBorrow extends Model
     protected $guarded = [];
 
     /**
-
      * 实验室仪器借用申请表页面查看
      * @author ChenMiao <github.com/Yidaaa-u>
      * @param String $form_id
