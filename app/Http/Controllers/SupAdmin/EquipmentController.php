@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\SupAdmin;
 
 use App\Http\Controllers\Controller;
+
 use App\Http\Requests\AddDeviceRequest;
 use App\Http\Requests\ExitNewRequest;
 use App\Http\Requests\GoBackRequest;

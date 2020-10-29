@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Requests\SupAdmin;
+namespace App\Http\Requests\SupAdmin\ClassController;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddDepRequest extends FormRequest
+class ReshowClassRequest extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -25,7 +26,7 @@ class AddDepRequest extends FormRequest
     public function rules()
     {
         return [
-            'department_name'=>'required'
+            'class_id'=>'required'
         ];
     }
 
