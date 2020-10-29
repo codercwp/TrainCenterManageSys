@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Approval;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ExamRequest;
-use App\Http\Requests\IdRequest;
+use App\Http\Requests\Approval\ApprovalHistory\Approval\ApprovalHistory\Approval\ApprovalHistory\Approval\ApprovalHistory\ExamRequest;
+use App\Http\Requests\Approval\ApprovalHistory\Approval\ApprovalHistory\Approval\ApprovalHistory\Approval\ApprovalHistory\IdRequest;
 use App\Models\Approve;
 use App\Models\Form;
 use Illuminate\Http\Request;
