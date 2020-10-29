@@ -11,6 +11,27 @@ class LaboratoryOperationRecord extends Model
     protected $guarded = [];
 
 
+<<<<<<< HEAD
+
+
+
+
+
+    /**
+     * 获取所有实验室运行记录信息
+     * @author tangshengyou <TangSYc.github>
+     * @return $data
+     */
+    public static function tsy_getLabOperationRecords($lab_id){
+        try{
+            $data = self::where('laboratory_id',$lab_id)
+                ->select("*")
+                ->orderby("created_at")
+                ->get();
+            return $data;
+        }catch(Exception $e){
+            logError("获取失败",[$e->getMessage()]);
+=======
     public static function abc()
     {
         $data = self::select('*')->get();
@@ -53,11 +74,33 @@ class LaboratoryOperationRecord extends Model
             return $data;
         } catch(\Exception $e){
             logError('实验室运行记录填报错误',[$e->getMessage()]);
+>>>>>>> cafc66869671d53905ec7953c08632ef581ce3c3
             return null;
         }
     }
 
     /**
+<<<<<<< HEAD
+     * 获取所有实验室运行记录信息
+     * @author tangshengyou <TangSYc.github>
+     * @return $data
+     */
+    public static function tsy_getLab(){
+        try{
+            $data = self::select("*")
+                ->orderby("created_at")
+                ->get();
+            return $data;
+        }catch(Exception $e){
+            logError("获取失败",[$e->getMessage()]);
+            return null;
+        }
+    }
+
+
+
+
+=======
      *实验室运行记录展示
      * @param $form_id
      * @return |null
@@ -89,5 +132,6 @@ class LaboratoryOperationRecord extends Model
             return null;
         }
     }
+>>>>>>> cafc66869671d53905ec7953c08632ef581ce3c3
 }
 

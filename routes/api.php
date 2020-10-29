@@ -86,6 +86,29 @@ Route::prefix('fill')->namespace('Fill')->group(function () {
 Route::get('test','TestController@test');
 
 
+Route::prefix('supadmin')->namespace('SupAdmin')->group(function (){
+    /**
+     * 唐盛友
+     */
+    Route::get('getlaboperationrecords','MainpageController@getLabOperationRecords');//运行实验室记录展示
+    Route::get('getlab','MainpageController@getLab');//下拉框回显所有实验室
+    Route::get('getlaball','MainpageController@getLabAll');//查看详情 显示所有的数据
+    Route::get('getlaballinfo','MainpageController@getLabAllInfo');//查看详情 显示所有的数据
+    Route::get('select','MainpageController@Select');//搜索
+
+    /*
+     * 丁晨
+     */
+    Route::get('showinfo','LocationController@showInfo');//场地管理页面展示
+    Route::post('addinfo','LocationController@addInfo');//新增场地
+    Route::get('findinfo','LocationController@findInfo');//查询
+    Route::get('returninfo','LocationController@returnInfo');//回显修改信息
+    Route::post('exitinfo','LocationController@exitInfo');//修改信息
+    Route::get('rminfo','LocationController@rmInfo');//删除
+
+});
+
+
 
 
 Route::prefix('supadmin')->namespace('SupAdmin')->group(function () {
@@ -104,7 +127,7 @@ Route::prefix('supadmin')->namespace('SupAdmin')->group(function () {
     Route::get('tearecorddisplay', 'FormDetailsController@TeaRecordDisplay'); //期末教学记录检查表页面展示
     Route::post('tearecorddispalyinfo', 'FormDetailsController@TeaRecordDisplayInfo'); //期末教学记录检查表页面查看
     Route::post('tearecordselect', 'FormDetailsController@TeaRecordSelect'); //期末教学记录检查表页面搜索
-  
+
   /**
   *唐邦彦
   */
@@ -120,7 +143,7 @@ Route::prefix('supadmin')->namespace('SupAdmin')->group(function () {
     Route::post('addclass','ClassController@addclass');//增加班级
     Route::post('modifyclass','ClassController@modifyclass');//修改班级
     Route::get('findclass','ClassController@findclass');//查询班级
-  
+
   /**
   *张巾巾
   */
@@ -204,4 +227,5 @@ Route::prefix('approval')->namespace('Approval')->group(function(){
     Route::get('pass','ExamController@pass');//审核通过
     Route::post('noPass','ExamController@noPass');//审核不通过
 });
+
 
