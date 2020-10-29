@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\SupAdmin;
 
 use App\Http\Controllers\Controller;
+
 use App\Http\Requests\SupAdmin\addInfoRequest;
 use App\Http\Requests\SupAdmin\findInfoRequest;
 use App\Models\Laboratory;
@@ -10,6 +11,7 @@ use Illuminate\Http\Request;
 
 class LocationController extends Controller
 {
+
 
     /**
      * 场地管理页面展示
@@ -80,12 +82,5 @@ class LocationController extends Controller
             json_success("修改信息成功",null,200):
             json_fail("修改信息失败",null,100);
     }
-
-
-
-
-
-
-
 
 }
