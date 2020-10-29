@@ -50,11 +50,21 @@ Route::group(['namespace'=>'Fill','prefix'=>'fill'],function(){
 });
 
 
+
 Route::prefix('report')->namespace('Fill')->group(function(){
     Route::post('operationreport','OperationReportController@operationReport');//实验室运行记录填报
     Route::get('nameview','OperationReportController@nameView');//申请人回显
     Route::get('classdrop','OperationReportController@classDrop');//专业班级下拉框
     Route::get('laboratorydrop','OperationReportController@laboratoryDrop');//实验室下拉框
+});
+
+/**
+ * @author Dujingwen <github.com/DJWKK>
+ */
+Route::prefix('/approval')->namespace('Approval')->group(function(){
+    Route::get('pass','ExamController@pass');//审核通过
+    Route::post('noPass','ExamController@noPass');//审核不通过
+
 });
 
 
@@ -83,7 +93,6 @@ Route::prefix('fill')->namespace('Fill')->group(function () {
 });
 
 
-Route::get('test','TestController@test');
 
 
 Route::prefix('supadmin')->namespace('SupAdmin')->group(function (){
@@ -105,7 +114,6 @@ Route::prefix('supadmin')->namespace('SupAdmin')->group(function (){
     Route::get('returninfo','LocationController@returnInfo');//回显修改信息
     Route::post('exitinfo','LocationController@exitInfo');//修改信息
     Route::get('rminfo','LocationController@rmInfo');//删除
-
 });
 
 
@@ -222,13 +230,4 @@ Route::prefix('approval')->namespace('Approval')->group(function () {//审批展
     Route::get('select','ApprovalController@select');//根据表单编号和姓名模糊查询表单
     Route::get('reshow','ApprovalController@reShow');//分类回显
 });
-
-/**
- * @author Dujingwen <github.com/DJWKK>
- */
-Route::prefix('approval')->namespace('Approval')->group(function(){
-    Route::get('pass','ExamController@pass');//审核通过
-    Route::post('noPass','ExamController@noPass');//审核不通过
-});
-
 
