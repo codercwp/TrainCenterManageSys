@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Approval;
+namespace App\Http\Requests\Approval\ApprovalHistory\Approval\ApprovalHistory;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class ShowRequest extends FormRequest
+class SelectTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,15 +26,12 @@ class ShowRequest extends FormRequest
     public function rules()
     {
         return [
-            "code"=>"required"
+            'code'=>'required',
+            'type_name'=>'required'
         ];
     }
-
-    /**
-     * @param Validator $validator
-     */
     protected function failedValidation(Validator $validator)
     {
-        throw (new HttpResponseException(\json_fail(422,'参数错误',$validator->errors()->all(),422)));
+        throw (new HttpResponseException(json_fail(422, '参数错误!', $validator->errors()->all(), 422)));
     }
 }
