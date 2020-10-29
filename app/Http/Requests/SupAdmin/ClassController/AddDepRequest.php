@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\SupAdmin;
+namespace App\Http\Requests\SupAdmin\ClassController;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
-class FindDepRequest extends FormRequest
+class AddDepRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,6 +16,7 @@ class FindDepRequest extends FormRequest
     {
         return true;
     }
+
     /**
      * Get the validation rules that apply to the request.
      *

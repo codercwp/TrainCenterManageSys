@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\SupAdmin;
+namespace App\Http\Requests\SupAdmin\ClassController;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddClassRequest extends FormRequest
+class ModifyDepRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,7 +16,6 @@ class AddClassRequest extends FormRequest
     {
         return true;
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -25,8 +24,8 @@ class AddClassRequest extends FormRequest
     public function rules()
     {
         return [
-            'department_id'=>'required',
-            'class_name'=>'required'
+            'department_name'=>'required',
+            'department_id'=>'required'
         ];
     }
 
@@ -37,5 +36,4 @@ class AddClassRequest extends FormRequest
     {
         throw (new HttpResponseException(json_fail(422, '参数错误',$validator->errors()->all(),422)));
     }
-
 }
