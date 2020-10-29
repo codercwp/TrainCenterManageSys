@@ -5084,11 +5084,7 @@
 
                     "dev-master": "1.18-dev"
                     "dev-main": "1.20-dev"
-                    "dev-main": "1.20-dev"
-
-                    "dev-master": "1.18-dev"
-
-                    "dev-main": "1.20-dev"
+                 
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -5143,21 +5139,6 @@
                 }
             ],
 
-            "time": "2020-07-14T12:35:20+00:00"
-        },
-        {
-            "name": "symfony/polyfill-iconv",
-            "version": "v1.18.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-iconv.git",
-                "reference": "6c2f78eb8f5ab8eaea98f6d414a5915f2e0fce36"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-iconv/zipball/6c2f78eb8f5ab8eaea98f6d414a5915f2e0fce36",
-                "reference": "6c2f78eb8f5ab8eaea98f6d414a5915f2e0fce36",
-
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -5207,10 +5188,7 @@
                 "branch-alias": {
                     "dev-master": "1.18-dev"
                     "dev-main": "1.20-dev"
-                    "dev-main": "1.20-dev"
-                    "dev-master": "1.18-dev"
 
-                    "dev-main": "1.20-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -5265,34 +5243,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-14T12:35:20+00:00"
-        },
-        {
-            "name": "symfony/polyfill-intl-idn",
-            "version": "v1.18.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "5dcab1bc7146cf8c1beaa4502a3d9be344334251"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/5dcab1bc7146cf8c1beaa4502a3d9be344334251",
-                "reference": "5dcab1bc7146cf8c1beaa4502a3d9be344334251",
-            "time": "2020-10-23T14:02:19+00:00"
-        },
-        {
-            "name": "symfony/polyfill-intl-idn",
-            "version": "v1.20.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "3b75acd829741c768bc8b1f84eb33265e7cc5117"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/3b75acd829741c768bc8b1f84eb33265e7cc5117",
-                "reference": "3b75acd829741c768bc8b1f84eb33265e7cc5117",
+
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -5329,11 +5280,6 @@
 
                     "dev-master": "1.18-dev"
 
-                    "dev-main": "1.20-dev"
-
-                    "dev-main": "1.20-dev"
-
-                    "dev-master": "1.18-dev"
 
                     "dev-main": "1.20-dev"
                 },
@@ -5395,6 +5341,7 @@
                     "type": "tidelift"
                 }
             ],
+
             "time": "2020-08-04T06:02:08+00:00"
         },
         {
@@ -5440,14 +5387,10 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.18-dev"
-                    "dev-main": "1.20-dev"
-
-                    "dev-main": "1.20-dev"
 
                     "dev-master": "1.18-dev"
-
                     "dev-main": "1.20-dev"
+
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -5521,7 +5464,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/a6977d63bf9a0ad4c65cd352709e230876f9904a",
                 "reference": "a6977d63bf9a0ad4c65cd352709e230876f9904a",
-
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -5554,17 +5496,10 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-
-                    "dev-master": "1.18-dev"
-
-                    "dev-main": "1.20-dev"
-
                     "dev-main": "1.20-dev"
 
 
                     "dev-master": "1.18-dev"
-
-                    "dev-main": "1.20-dev"
 
                 },
                 "thanks": {
@@ -5620,6 +5555,7 @@
                     "type": "tidelift"
                 }
             ],
+
             "time": "2020-07-14T12:35:20+00:00"
         },
         {
@@ -5648,6 +5584,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675",
                 "reference": "54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675",
+
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -5662,7 +5599,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675",
                 "reference": "54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675",
-
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5678,13 +5614,9 @@
             "extra": {
                 "branch-alias": {
 
-                    "dev-master": "1.18-dev"
-
-                    "dev-main": "1.20-dev"
-
-                    "dev-main": "1.20-dev"
 
                     "dev-master": "1.18-dev"
+
 
                     "dev-main": "1.20-dev"
                 },
@@ -5730,6 +5662,20 @@
                     "type": "tidelift"
                 }
             ],
+
+            "time": "2020-10-23T14:02:19+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php72",
+            "version": "v1.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php72.git",
+                "reference": "cede45fcdfabdd6043b3592e83678e42ec69e930"
+            },
+            "dist": {
+                "type": "zip",
+
 
             "time": "2020-07-14T12:35:20+00:00"
         },
@@ -5917,9 +5863,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.18-dev"
-                    "dev-main": "1.20-dev"
-                    "dev-main": "1.20-dev"
+
                     "dev-master": "1.18-dev"
                     "dev-main": "1.20-dev"
                 },
@@ -5975,6 +5919,7 @@
                     "type": "tidelift"
                 }
             ],
+
             "time": "2020-07-14T12:35:20+00:00"
         },
         {
@@ -6018,12 +5963,9 @@
             "extra": {
                 "branch-alias": {
 
+                    "dev-main": "1.20-dev"
                     "dev-master": "1.18-dev"
 
-                    "dev-main": "1.20-dev"
-                    "dev-main": "1.20-dev"
-                    "dev-master": "1.18-dev"
-                    "dev-main": "1.20-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -6080,7 +6022,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-14T12:35:20+00:00"
+  "time": "2020-07-14T12:35:20+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
@@ -6126,13 +6068,6 @@
                     "dev-master": "1.18-dev"
 
                     "dev-main": "1.20-dev"
-
-                    "dev-main": "1.20-dev"
-
-                    "dev-master": "1.18-dev"
-
-                    "dev-main": "1.20-dev"
-
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -6316,7 +6251,6 @@
             "time": "2020-07-14T12:35:20+00:00"
 
             "time": "2020-10-23T14:02:19+00:00"
-
         },
         {
             "name": "symfony/process",

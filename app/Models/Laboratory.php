@@ -91,7 +91,6 @@ class Laboratory extends Model
         }
     }
 
-
     /**
      * 系部展示
      * @author yuanshuxin <github.com/CoderYsx>

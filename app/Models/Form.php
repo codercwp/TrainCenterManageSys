@@ -19,6 +19,8 @@ class Form extends Model
     public $timestamps = true;
     protected $guarded = [];
     public $primaryKey = "form_id";
+
+    /**
     /**
      * 根据表id查找表单信息
      * @author tangshengyou
@@ -63,7 +65,6 @@ class Form extends Model
     }
 
     /**
-<<<<<<< HEAD
      * 获取当前用户填报的所有表单
      * @author tangshengyou
      * @param
@@ -144,6 +145,8 @@ class Form extends Model
             return null;
         }
     }
+
+    /**
      /**
      * 得到所有表单展示数据
      * @param $request
@@ -331,8 +334,6 @@ class Form extends Model
     }
 
     /**
-<<<<<<< HEAD
-
      * 获取当前用户填报的所有表单
      * @author tangshengyou
      * @param $info
@@ -369,7 +370,6 @@ class Form extends Model
             return false;}
     }
     /*
-
      * 申请人回显
      * @return |null
      */
