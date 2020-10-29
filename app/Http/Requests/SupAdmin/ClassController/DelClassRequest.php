@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Requests\SupAdmin;
+namespace App\Http\Requests\SupAdmin\ClassController;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ReshowDepartmentRequest extends FormRequest
+class DelClassRequest extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -25,7 +26,7 @@ class ReshowDepartmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'department_id'=>'required'
+            'class_id'=>'required'
         ];
     }
 
@@ -36,4 +37,5 @@ class ReshowDepartmentRequest extends FormRequest
     {
         throw (new HttpResponseException(json_fail(422, '参数错误',$validator->errors()->all(),422)));
     }
+
 }

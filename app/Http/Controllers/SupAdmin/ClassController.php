@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\SupAdmin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\SupAdmin\AddClassRequest;
-use App\Http\Requests\SupAdmin\AddDepRequest;
-use App\Http\Requests\SupAdmin\DelClassRequest;
-use App\Http\Requests\SupAdmin\DeleteDepartmentRequest;
-use App\Http\Requests\SupAdmin\FindClassRequest;
-use App\Http\Requests\SupAdmin\FindDepRequest;
-use App\Http\Requests\SupAdmin\ModifyDepRequest;
-use App\Http\Requests\SupAdmin\ReshowClassRequest;
-use App\Http\Requests\SupAdmin\ReshowDepartmentRequest;
+use App\Http\Requests\SupAdmin\ClassController\AddClassRequest;
+use App\Http\Requests\SupAdmin\ClassController\AddDepRequest;
+use App\Http\Requests\SupAdmin\ClassController\DelClassRequest;
+use App\Http\Requests\SupAdmin\ClassController\DeleteDepartmentRequest;
+use App\Http\Requests\SupAdmin\ClassController\FindClassRequest;
+use App\Http\Requests\SupAdmin\ClassController\FindDepRequest;
+use App\Http\Requests\SupAdmin\ClassController\ModifyDepRequest;
+use App\Http\Requests\SupAdmin\ClassController\ReshowClassRequest;
+use App\Http\Requests\SupAdmin\ClassController\ReshowDepartmentRequest;
 use Illuminate\Http\Request;
 use App\Models\Department;
 use App\Models\clas;
