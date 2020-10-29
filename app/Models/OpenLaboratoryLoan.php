@@ -39,7 +39,9 @@ class OpenLaboratoryLoan extends Model
        }catch (\Exception $e){
          logError('获取开放实验室申请表信息错误',[$e->getMessage()]);
          return null;
-
+       }
+    }
+    /**
      * 开放实验室使用申请填报
      * @author HuWeiChen <github.com/nathaniel-kk>
      * @param [String] $code

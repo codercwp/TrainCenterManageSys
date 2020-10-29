@@ -13,16 +13,6 @@ class Equipment extends Model
     public $timestamps = true;
     protected $guarded = [];
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
     /**
 
      * 增加设备
@@ -42,7 +32,9 @@ class Equipment extends Model
             return $res;
         }catch (\Exception $e) {
             logError('新增设备信息失败',[$e->getMessage()]);
-
+        }
+    }
+/*
      * 获取所有的设备信息
      * @author tangshengyou
      * @return array
@@ -137,8 +129,11 @@ class Equipment extends Model
             return $res;
         }catch (\Exception $e){
             logError('删除设备失败',[$e->getMessage()]);
+        }
+    }
 
-          
+
+    /**
      * 通过设备id获取对应设备的详细信息
      * @author tangshengyou
      * @param
@@ -192,7 +187,10 @@ class Equipment extends Model
             return $res;
         }catch (\Exception $e) {
             logError('获取设备展示信息失败',[$e->getMessage()]);
+        }
+    }
 
+    /**
      * 通过设备name获取对应设备的详细信息
      * @author tangshengyou
      * @param

@@ -12,11 +12,6 @@ class LaboratoryLoan extends Model
     public $timestamps = true;
     protected $guarded = [];
 
-  
-  
-  
-  
-  
     /**
      * 实验室借用申请表页面查看
      * @author ChenMiao <github.com/Yidaaa-u>
@@ -45,6 +40,7 @@ class LaboratoryLoan extends Model
         }
     }
 
+    /**
      * 填报实验室借用申请
      * @author HuWeiChen <github.com/nathaniel-kk>
      * @return array
@@ -70,6 +66,7 @@ class LaboratoryLoan extends Model
             return null;
         }
     }
+
     /**
      * 实验室借用申请表单展示
      * @param $request
@@ -115,9 +112,5 @@ class LaboratoryLoan extends Model
             return false;
         }
     }
-//join('approve', 'form.form_id', 'approve.form_id')
-//
-//
-
 
 }

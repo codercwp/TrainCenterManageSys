@@ -48,8 +48,9 @@ class OperationReportController extends Controller
      * 申请人回显
      * @return \Illuminate\Http\JsonResponse
      */
-    public function nameView(){
-        $data = Form::lzz_nameview();
+    public function nameView(nameRequest $request){
+        $code = $request['code'];
+        $data = Form::lzz_nameview($code);
         return $data?
             json_success('成功!',$data,200) :
             json_fail('失败!',null,100);

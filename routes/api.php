@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -50,11 +52,21 @@ Route::group(['namespace'=>'Fill','prefix'=>'fill'],function(){
 });
 
 
+
 Route::prefix('report')->namespace('Fill')->group(function(){
     Route::post('operationreport','OperationReportController@operationReport');//实验室运行记录填报
     Route::get('nameview','OperationReportController@nameView');//申请人回显
     Route::get('classdrop','OperationReportController@classDrop');//专业班级下拉框
     Route::get('laboratorydrop','OperationReportController@laboratoryDrop');//实验室下拉框
+});
+
+/**
+ * @author Dujingwen <github.com/DJWKK>
+ */
+Route::prefix('/approval')->namespace('Approval')->group(function(){
+    Route::get('pass','ExamController@pass');//审核通过
+    Route::post('noPass','ExamController@noPass');//审核不通过
+
 });
 
 
@@ -83,7 +95,6 @@ Route::prefix('fill')->namespace('Fill')->group(function () {
 });
 
 
-Route::get('test','TestController@test');
 
 
 Route::prefix('supadmin')->namespace('SupAdmin')->group(function (){
@@ -105,7 +116,6 @@ Route::prefix('supadmin')->namespace('SupAdmin')->group(function (){
     Route::get('returninfo','LocationController@returnInfo');//回显修改信息
     Route::post('exitinfo','LocationController@exitInfo');//修改信息
     Route::get('rminfo','LocationController@rmInfo');//删除
-
 });
 
 
@@ -116,17 +126,20 @@ Route::prefix('supadmin')->namespace('SupAdmin')->group(function () {
     *陈淼
     */
     Route::get('labbordisplay', 'FormDetailsController@labBorDisplay'); //实验室借用申请表页面展示
-    Route::post('labbordispalyinfo', 'FormDetailsController@labBorDispalyInfo'); //实验室借用申请表页面查看
-    Route::post('labborselect', 'FormDetailsController@labBorSelect'); //实验室借用申请表页面搜索
+    Route::get('labbordispalyinfo', 'FormDetailsController@labBorDispalyInfo'); //实验室借用申请表页面查看
+    Route::get('labborselect', 'FormDetailsController@labBorSelect'); //实验室借用申请表页面搜索
+
     Route::get('labopendisplay', 'FormDetailsController@labOpenDisplay'); //开放实验室使用申请表页面展示
-    Route::post('labopendisplayinfo', 'FormDetailsController@labOpenDisplayInfo'); //开放实验室使用申请表页面查看
-    Route::post('labopenselect', 'FormDetailsController@labOpenSelect'); //开放实验室使用申请表页面搜索
+    Route::get('labopendisplayinfo', 'FormDetailsController@labOpenDisplayInfo'); //开放实验室使用申请表页面查看
+    Route::get('labopenselect', 'FormDetailsController@labOpenSelect'); //开放实验室使用申请表页面搜索
+
     Route::get('labequipdisplay', 'FormDetailsController@labEquipDisplay'); //实验室仪器借用申请表页面展示
-    Route::post('labequipdisplayinfo', 'FormDetailsController@labEquipDisplayInfo'); //实验室仪器借用申请表页面查看
-    Route::post('labequipselect', 'FormDetailsController@labEquipSelect'); //实验室仪器借用申请表页面搜索
+    Route::get('labequipdisplayinfo', 'FormDetailsController@labEquipDisplayInfo'); //实验室仪器借用申请表页面查看
+    Route::get('labequipselect', 'FormDetailsController@labEquipSelect'); //实验室仪器借用申请表页面搜索
+
     Route::get('tearecorddisplay', 'FormDetailsController@TeaRecordDisplay'); //期末教学记录检查表页面展示
-    Route::post('tearecorddispalyinfo', 'FormDetailsController@TeaRecordDisplayInfo'); //期末教学记录检查表页面查看
-    Route::post('tearecordselect', 'FormDetailsController@TeaRecordSelect'); //期末教学记录检查表页面搜索
+    Route::get('tearecorddispalyinfo', 'FormDetailsController@TeaRecordDisplayInfo'); //期末教学记录检查表页面查看
+    Route::get('tearecordselect', 'FormDetailsController@TeaRecordSelect'); //期末教学记录检查表页面搜索
 
   /**
   *唐邦彦
@@ -203,11 +216,11 @@ Route::prefix('check')->namespace('DataScreen')->group(function(){
 /**
  * @author yangsiqi <github.com/Double-R111>
  */
-Route::prefix('approval')->namespace('Approval')->group(function () {
-    Route::get('showall', 'ApproveHistoryController@showAll');
-    Route::get('searchform', 'ApproveHistoryController@searchForm');
-    Route::get('selecttype', 'ApproveHistoryController@selectType');
-    Route::get('reshowall', 'ApproveHistoryController@reshowAll');
+Route::prefix('approval')->namespace('Approval')->group(function () {//审批历史路由组
+    Route::get('showall', 'ApproveHistoryController@showAll');//展示所有审批过的表单
+    Route::get('searchform', 'ApproveHistoryController@searchForm');//根据表单编号和申请人姓名模糊查询表单
+    Route::get('selecttype', 'ApproveHistoryController@selectType');//通过表单类型查询表单
+    Route::get('reshowall', 'ApproveHistoryController@reshowAll');//回显表单详情
 });
 
 /*
@@ -219,13 +232,4 @@ Route::prefix('approval')->namespace('Approval')->group(function () {//审批展
     Route::get('select','ApprovalController@select');//根据表单编号和姓名模糊查询表单
     Route::get('reshow','ApprovalController@reShow');//分类回显
 });
-
-/**
- * @author Dujingwen <github.com/DJWKK>
- */
-Route::prefix('approval')->namespace('Approval')->group(function(){
-    Route::get('pass','ExamController@pass');//审核通过
-    Route::post('noPass','ExamController@noPass');//审核不通过
-});
-
 

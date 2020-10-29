@@ -10,13 +10,6 @@ class LaboratoryOperationRecord extends Model
     public $timestamps = true;
     protected $guarded = [];
 
-
-<<<<<<< HEAD
-
-
-
-
-
     /**
      * 获取所有实验室运行记录信息
      * @author tangshengyou <TangSYc.github>
@@ -31,12 +24,10 @@ class LaboratoryOperationRecord extends Model
             return $data;
         }catch(Exception $e){
             logError("获取失败",[$e->getMessage()]);
-=======
-    public static function abc()
-    {
-        $data = self::select('*')->get();
-        return $data;
+            return null;
+        }
     }
+
     /**
      * 填报入库
      * @param $form_id
@@ -74,13 +65,11 @@ class LaboratoryOperationRecord extends Model
             return $data;
         } catch(\Exception $e){
             logError('实验室运行记录填报错误',[$e->getMessage()]);
->>>>>>> cafc66869671d53905ec7953c08632ef581ce3c3
             return null;
         }
     }
 
     /**
-<<<<<<< HEAD
      * 获取所有实验室运行记录信息
      * @author tangshengyou <TangSYc.github>
      * @return $data
@@ -97,10 +86,7 @@ class LaboratoryOperationRecord extends Model
         }
     }
 
-
-
-
-=======
+    /**
      *实验室运行记录展示
      * @param $form_id
      * @return |null
@@ -132,6 +118,5 @@ class LaboratoryOperationRecord extends Model
             return null;
         }
     }
->>>>>>> cafc66869671d53905ec7953c08632ef581ce3c3
 }
 
