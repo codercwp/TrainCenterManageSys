@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Approval;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
 use App\Http\Requests\Approval\Exam\ExamRequest;
 use App\Http\Requests\Approval\Exam\IdRequest;
+
 use App\Models\Approve;
 use App\Models\Form;
-use Illuminate\Http\Request;
+
 
 class ExamController extends Controller
 {
