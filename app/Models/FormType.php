@@ -9,6 +9,4 @@ class FormType extends Model
     protected $table = "form_type";
     public $timestamps = true;
     protected $guarded = [];
-
-
 }

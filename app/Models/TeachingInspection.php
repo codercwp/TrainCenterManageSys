@@ -10,7 +10,7 @@ class TeachingInspection extends Model
     protected $table = "teaching_inspection";
     public $timestamps = true;
     protected $guarded = [];
-          /*
+        /**
          * 添加表单
          * @author caiwenpin <github.com/codercwp>
          * @param $id

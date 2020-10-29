@@ -22,11 +22,11 @@ class Form extends Model
     public $timestamps = true;
     protected $guarded = [];
 
-  
-  
-  
-  
-  
+
+
+
+
+
     /**
      * 实验室借用申请表页面展示
      * @author ChenMiao <github.com/Yidaaa-u>
@@ -41,6 +41,9 @@ class Form extends Model
             return $data;
         }catch (\Exception $e){
             logError('实验室借用申请表展示错误',[$e->getMessage()]);
+            return null;
+        }
+    }
 
     public $primaryKey = "form_id";
     /**
@@ -89,7 +92,9 @@ class Form extends Model
             return $data;
         }catch (\Exception $e){
             logError('实验室借用申请表搜索展示错误',[$e->getMessage()]);
-
+            return null;
+        }
+    }
 
 
     /**
@@ -202,8 +207,11 @@ class Form extends Model
             return $data;
         }catch (\Exception $e){
             logError('实验室仪器借用申请表搜索展示错误',[$e->getMessage()]);
+            return null;
+        }
+    }
 
-
+    /**
      * 获取当前用户填报的所有表单
      * @author tangshengyou
      * @param
