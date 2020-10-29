@@ -2,11 +2,7 @@
 
 namespace App\Models;
 
-
 use http\Exception;
-
-use Exception;
-
 use Illuminate\Database\Eloquent\Model;
 use \DB;
 
@@ -16,10 +12,6 @@ class EquipmentBorrow extends Model
     public $timestamps = true;
     protected $guarded = [];
 
-  
-  
-  
-  
     /**
 
      * 实验室仪器借用申请表页面查看
@@ -32,7 +24,36 @@ class EquipmentBorrow extends Model
         try {
             $data1=self::join('approve','equipment_borrow.form_id','approve.form_id')
                 ->select('equipment_borrow.borrow_department',
-
+                    'equipment_borrow.borrow_application',
+                    'equipment_borrow.destine_start_time',
+                    'equipment_borrow.destine_end_time',
+                    'equipment_borrow.borrower_name',
+                'equipment_borrow.borrower_phone',
+                    'approve.borrowing_department_name',
+                    'approve.borrowing_manager_name',
+                'approve.center_director_name',
+                    'approve.device_administrator_out_name',
+                    'equipment_borrow.borrower_name',
+                    'approve.updated_at',
+                    'approve.reason',
+                    'approve.device_administrator_acceptance_name',
+                    'equipment_borrow.borrower_name')
+                ->where('equipment_borrow.form_id',$form_id)
+                ->get();
+            $data2=self::join('equipment_borrow_checklist','equipment_borrow_checklist.form_id','equipment_borrow.form_id')
+                ->join('equipment','equipment_borrow_checklist.equipment_id','equipment.equipment_id')
+                ->select('equipment.equipment_name','equipment.model','equipment_borrow_checklist.equipment_number','equipment.annex')
+                ->where('equipment_borrow.form_id',$form_id)
+                ->get();
+            $data['frominfo']=$data1;
+            $data['equiplist']=$data2;
+            return $data;
+        }catch (\Exception $e){
+            logError('获取实验室申请表信息错误',[$e->getMessage()]);
+            return null;
+        }
+    }
+    /**
      * 实验室设备借用信息存入数据库
      * @author tangshengyou
      * @param $info
@@ -48,7 +69,6 @@ class EquipmentBorrow extends Model
                 'destine_end_time'=>$info['destine_end_time'],
                 'borrower_name'=>$info['name'],
                 'borrower_phone'=>$info['tel']
-
             ]);
             return true;
         }catch(Exception $e){
@@ -101,19 +121,6 @@ class EquipmentBorrow extends Model
         }
     }
 
-                    'equipment_borrow.borrower_phone',
-                    'form.form_id',
-                    'form.form_status',
-                    'form.created_at',
-                    'approve.reason'
-                )
-                ->first();
-            return $data;
-        }catch(Exception $e){
-            logError("存入数据库失败",[$e->getMessage()]);
-            return null;
-        }
-    }
     /**
      * 插入失败后删除
      * @author tangshengyou
@@ -133,6 +140,7 @@ class EquipmentBorrow extends Model
         }
     }
 
+    /**
      * 得到近期待还设备信息
      * @author zhuxianglin <github.com/lybbor>
      * @return void
@@ -150,7 +158,7 @@ class EquipmentBorrow extends Model
     /**
      * 得到近期借用设备
      * @author zhuxianglin <github.com/lybbor>
-     * @return void 
+     * @return void
      */
     public static function zxl_getrecentlend(){
         try{
@@ -161,7 +169,7 @@ class EquipmentBorrow extends Model
             return null;
         }
     }
-    
+
     /**
      * 得到逾期未还信息
      * @author zhuxianglin <github.com/lybbor>

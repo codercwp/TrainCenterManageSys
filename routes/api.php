@@ -203,11 +203,11 @@ Route::prefix('check')->namespace('DataScreen')->group(function(){
 /**
  * @author yangsiqi <github.com/Double-R111>
  */
-Route::prefix('approval')->namespace('Approval')->group(function () {
-    Route::get('showall', 'ApproveHistoryController@showAll');
-    Route::get('searchform', 'ApproveHistoryController@searchForm');
-    Route::get('selecttype', 'ApproveHistoryController@selectType');
-    Route::get('reshowall', 'ApproveHistoryController@reshowAll');
+Route::prefix('approval')->namespace('Approval')->group(function () {//审批历史路由组
+    Route::get('showall', 'ApproveHistoryController@showAll');//展示所有审批过的表单
+    Route::get('searchform', 'ApproveHistoryController@searchForm');//根据表单编号和申请人姓名模糊查询表单
+    Route::get('selecttype', 'ApproveHistoryController@selectType');//通过表单类型查询表单
+    Route::get('reshowall', 'ApproveHistoryController@reshowAll');//回显表单详情
 });
 
 /*

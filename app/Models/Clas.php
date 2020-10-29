@@ -10,15 +10,6 @@ class Clas extends Model
     public $timestamps = true;
     protected $guarded = [];
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
     /**
 
      * 展示班级页面
@@ -124,7 +115,10 @@ class Clas extends Model
             return $date;
         }catch (Exception $e){
             logger::Error('班级修改失败',[$e->getMessage()]);
+        }
+    }
 
+    /*
      *
      * @return |null
      */

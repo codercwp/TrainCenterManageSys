@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Approval\ApprovalHistory\Approval\ApprovalHistory;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
@@ -26,7 +26,7 @@ class SelectTypeRequest extends FormRequest
     public function rules()
     {
         return [
-           'code'=>'required',
+            'code'=>'required',
             'type_name'=>'required'
         ];
     }

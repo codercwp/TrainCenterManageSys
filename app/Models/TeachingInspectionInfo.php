@@ -101,6 +101,9 @@ class TeachingInspectionInfo extends Model
             return $result;
         } catch (\Exception $e) {
             logError('增加错误', [$e->getMessage()]);
+            return null;
+        }
+    }
 
     /**
      * 安全检查情况
