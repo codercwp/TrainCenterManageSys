@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Fill\Show;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-
-class FormIdRequest extends FormRequest
+class IdRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,6 +26,7 @@ class FormIdRequest extends FormRequest
     public function rules()
     {
         return [
+            'code'=>'required',
             'form_id'=>'required'
         ];
     }

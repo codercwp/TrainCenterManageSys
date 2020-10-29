@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Fill;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EquipmentBorrowingRequest;
+
+use App\Http\Requests\Fill\DealFrom\EquipmentBorrowingRequest;
 use App\Models\Approve;
 use App\Models\Equipment;
 use App\Models\EquipmentBorrow;

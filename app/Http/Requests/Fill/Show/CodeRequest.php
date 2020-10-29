@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Fill\Show;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
 
-class EquipmentBorrowingRequest extends FormRequest
+class CodeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,11 +26,7 @@ class EquipmentBorrowingRequest extends FormRequest
     public function rules()
     {
         return [
-            "code"=>'required',
-            "borrow_department"=>'required|max:200',
-            "borrow_application"=>'required|max:200',
-            "destine_start_time"=>'required|date',
-            "destine_end_time"=>'required|date|after_or_equal:destine_start_time',
+            'code'=>'required',
         ];
     }
     /**
@@ -41,3 +37,5 @@ class EquipmentBorrowingRequest extends FormRequest
         throw (new HttpResponseException(json_fail(422, '参数错误!', $validator->errors()->all(), 422)));
     }
 }
+
+

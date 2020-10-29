@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Fill;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CodeRequest;
-use App\Http\Requests\EquipmentIdRequest;
-use App\Http\Requests\FormIdRequest;
-use App\Http\Requests\FormRequest;
-use App\Http\Requests\FormTypeRequest;
-use App\Http\Requests\IdRequest;
+use App\Http\Requests\Fill\Show\CodeRequest;
+use App\Http\Requests\Fill\Show\EquipmentIdRequest;
+use App\Http\Requests\Fill\Show\FormIdRequest;
+use App\Http\Requests\Fill\Show\FormTypeRequest;
+use App\Http\Requests\Fill\Show\IdRequest;
 use App\Models\Equipment;
 use App\Models\EquipmentBorrow;
 use App\Models\EquipmentBorrowChecklist;

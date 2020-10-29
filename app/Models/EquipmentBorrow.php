@@ -12,7 +12,6 @@ class EquipmentBorrow extends Model
     protected $guarded = [];
 
     /**
-<<<<<<< HEAD
      * 实验室设备借用信息存入数据库
      * @author tangshengyou
      * @param $info
