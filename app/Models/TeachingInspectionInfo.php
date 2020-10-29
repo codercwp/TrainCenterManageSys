@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use DB;
 class TeachingInspectionInfo extends Model
 {
     protected $table = "teaching_inspection_info";
@@ -25,6 +25,7 @@ class TeachingInspectionInfo extends Model
         }
     }
 
+
     /*
     * 展示id对应的实验室与表单信息
     * @author caiwenpin <github.com/codercwp>
@@ -33,7 +34,6 @@ class TeachingInspectionInfo extends Model
     */
     public static function cwp_one($id){
         try {
-
             $data = self::join('laboratory','teaching_inspection_info.laboratory_id','laboratory.laboratory_id')
                 ->where('teaching_inspection_info.laboratory_id',$id)
 
@@ -48,12 +48,14 @@ class TeachingInspectionInfo extends Model
             logError('展示错误', [$e->getMessage()]);
         }
     }
+
     /*
     * 将数据存入数据库
     * @author caiwenpin <github.com/codercwp>
     * @param $id，$data
     * return result
     */
+
     public static function cwp_add($id, $data){
         try {
             for($i=0;$i<count($data);$i++) {
@@ -70,6 +72,55 @@ class TeachingInspectionInfo extends Model
             return $result;
         } catch (\Exception $e) {
             logError('增加错误', [$e->getMessage()]);
+        }
+    }
+
+    /**
+     * 安全检查情况
+     * @author yuanshuxin <github.com/CoderYsx>
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public static function ysx_safecheck(){
+
+        try {
+            $res = DB::table('teaching_inspection_info')
+                ->join('laboratory', 'laboratory.laboratory_id', '=', 'teaching_inspection_info.laboratory_id')
+                ->select('laboratory.laboratory_name')->get();
+            return $res;
+        } catch (\Exception $e) {
+            logError('失败',[$e->getMessage()]);
+            return null;
+        }
+
+    }
+
+    /**
+     * 数量统计
+     * @author yuanshuxin <github.com/CoderYsx>
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public static function ysx_checkcount(){
+        try {
+            $res = DB::table('chview')->get();
+            return $res;
+        } catch (\Exception $e) {
+            logError('失败',[$e->getMessage()]);
+            return null;
+        }
+    }
+
+    /**
+     * 检查统计
+     * @author yuanshuxin <github.com/CoderYsx>
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public static function ysx_checkStatistics(){
+        try {
+            $res = DB::table('chstatistics')->get();
+            return $res;
+        } catch (\Exception $e) {
+            logError('失败',[$e->getMessage()]);
+            return null;
         }
     }
 
