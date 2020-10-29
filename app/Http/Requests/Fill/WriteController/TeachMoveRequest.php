@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Approval\Exam;
+namespace App\Http\Requests\Fill\WriteController;
 
-
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Contracts\Validation\Validator;
 
-class IdRequest extends FormRequest
+class TeachMoveRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,16 +26,11 @@ class IdRequest extends FormRequest
     public function rules()
     {
         return [
-            'code'=>'required',
-            'form_id'=>'required'
+            'laboratory_name'=>'required|String',
         ];
     }
-
-    /**
-     * @param Validator $validator
-     */
     protected function failedValidation(Validator $validator)
     {
-        throw (new HttpResponseException(json_fail(422, '参数错误!', $validator->errors()->all(), 422)));
+        throw (new HttpResponseException(json_fail('参数错误!',$validator->errors()->all(),422)));
     }
 }

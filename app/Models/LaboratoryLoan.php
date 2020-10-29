@@ -66,6 +66,7 @@ class LaboratoryLoan extends Model
             return null;
         }
     }
+
     /**
      * 实验室借用申请表单展示
      * @param $request
@@ -111,9 +112,5 @@ class LaboratoryLoan extends Model
             return false;
         }
     }
-//join('approve', 'form.form_id', 'approve.form_id')
-//
-//
-
 
 }

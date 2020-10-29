@@ -10,9 +10,6 @@ class Laboratory extends Model
     protected $table = "laboratory";
     public $timestamps = true;
     protected $guarded = [];
-
-
-
     /**
      * @return |null
      * z展示实验室表信息
@@ -68,6 +65,7 @@ class Laboratory extends Model
         }
     }
 
+
     /*
      * 把所有实验室名称给前端
      * @author caiwenpin <github.com/codercwp>
@@ -89,6 +87,7 @@ class Laboratory extends Model
       * @author caiwenpin <github.com/codercwp>
       * return $data
       */
+
     public static function cwp_move($name)
     {
         try {
@@ -185,7 +184,6 @@ class Laboratory extends Model
             return null;
         }
     }
-
 
     /**
      * @param $data

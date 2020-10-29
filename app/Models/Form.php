@@ -3,10 +3,9 @@
 namespace App\Models;
 
 
-use App\Http\Requests\Approval\ApprovalHistory\Approval\ApprovalHistory\Approval\ApprovalHistory\Approval\ApprovalHistory\ShowAllRequest;
+use App\Http\Requests\Approval\ApprovalHistory\ShowAllRequest;
 use App\Http\Requests\SupAdmin\labBorDispalyInfoRequest;
 use http\Exception;
-use App\Http\Requests\ShowAllRequest;
 
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Types\Self_;
@@ -42,6 +41,7 @@ class Form extends Model
     }
 
     public $primaryKey = "form_id";
+
     /**
      * 根据表id查找表单信息
      * @author tangshengyou
@@ -276,6 +276,8 @@ class Form extends Model
             return null;
         }
     }
+
+    /**
      /**
      * 得到所有表单展示数据
      * @author yangsiqi <github.com/Double-R111>
@@ -297,7 +299,6 @@ class Form extends Model
             } elseif ($role == "设备管理员") {
                 $lev = 7;
             }
-//            dd($name);
             $data = Form::join('form_type', 'form.type_id', 'form_type.type_id')
 
                 ->join('form_status', 'form.form_status', 'form_status.status_id')
@@ -464,7 +465,7 @@ class Form extends Model
         }
     }
 
-     /*
+    /**
      * 审核通过 更新表单状态（5之后的状态）
      * @param $form_type
      * @param $role
@@ -526,8 +527,6 @@ class Form extends Model
     }
 
     /**
-
-
      * 获取当前用户填报的所有表单
      * @author tangshengyou
      * @param $info
@@ -564,13 +563,11 @@ class Form extends Model
             return false;}
     }
     /*
-
      * 申请人回显
      * @return |null
      */
-    public static function lzz_nameView(){
+    public static function lzz_nameView($code){
         try {
-            $code = 'xxxxx';
             $res  = getDinginfo($code);
             $data = $res->name;
             return $data;
@@ -600,6 +597,7 @@ class Form extends Model
             return null;
         }
     }
+
     /**
      * 审核不通过 更新表单状态（5之后的状态）
      * @param $role

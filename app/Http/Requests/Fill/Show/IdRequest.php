@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Approval\Exam;
-
+namespace App\Http\Requests\Fill\Show;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -31,7 +30,6 @@ class IdRequest extends FormRequest
             'form_id'=>'required'
         ];
     }
-
     /**
      * @param Validator $validator
      */

@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Approval\Exam;
-
+namespace App\Http\Requests\Fill\Show;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class IdRequest extends FormRequest
+class EquipmentIdRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,11 +26,9 @@ class IdRequest extends FormRequest
     public function rules()
     {
         return [
-            'code'=>'required',
-            'form_id'=>'required'
+            'equipment_id'=>'required'
         ];
     }
-
     /**
      * @param Validator $validator
      */
@@ -40,3 +37,7 @@ class IdRequest extends FormRequest
         throw (new HttpResponseException(json_fail(422, '参数错误!', $validator->errors()->all(), 422)));
     }
 }
+
+
+
+
