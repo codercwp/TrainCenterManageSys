@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\SupAdmin;
+namespace App\Http\Requests\SupAdmin\ClassController;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ModifyDepRequest extends FormRequest
+class DeleteDepartmentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,6 +16,7 @@ class ModifyDepRequest extends FormRequest
     {
         return true;
     }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,7 +25,6 @@ class ModifyDepRequest extends FormRequest
     public function rules()
     {
         return [
-            'department_name'=>'required',
             'department_id'=>'required'
         ];
     }
