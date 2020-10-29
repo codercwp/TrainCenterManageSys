@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+use App\Http\Requests\Approval\ApprovalHistory\Approval\ApprovalHistory\Approval\ApprovalHistory\Approval\ApprovalHistory\ShowAllRequest;
 use App\Http\Requests\SupAdmin\labBorDispalyInfoRequest;
 use http\Exception;
 use App\Http\Requests\ShowAllRequest;
@@ -21,11 +22,6 @@ class Form extends Model
     protected $table = "form";
     public $timestamps = true;
     protected $guarded = [];
-
-
-
-
-
 
     /**
      * 实验室借用申请表页面展示
@@ -282,9 +278,9 @@ class Form extends Model
     }
      /**
      * 得到所有表单展示数据
-     * @param $request
-     * @return false
      * @author yangsiqi <github.com/Double-R111>
+     * @param $code
+     * @return false
      */
     public static function ysq_getAll($code)
     {
@@ -630,9 +626,10 @@ class Form extends Model
         }
     }
 
-    /* 通过申请人姓名和表单编号模糊查询表单
-     * @author yangsiqi <github.com/Double-R111>
-     * @param $request
+    /**
+     *  @author yangsiqi <github.com/Double-R111>
+     * @param $infos
+     * @param $code
      * @return false
      */
     public static function ysq_Query($infos, $code)
@@ -714,9 +711,10 @@ class Form extends Model
 
     /**
      * 通过类别查询表单详情
-     * @param $request
-     * @return false
      * @author yangsiqi <github.com/Double-R111>
+     * @param $type_name
+     * @param $code
+     * @return false
      */
     public static function ysq_searchType($type_name, $code)
     {
@@ -797,9 +795,9 @@ class Form extends Model
 
     /**
      * 分类查询展示各类表单详情
-     * @param $request
-     * @return false
      * @author yangsiqi <github.com/Double-R111>
+     * @param $form_id
+     * @return false
      */
     public static function ysq_reshowAll($form_id)
     {
@@ -807,7 +805,6 @@ class Form extends Model
 
             $data = Form::where('form_id', '=', $form_id)
                 ->value('type_id');
-//            dd($data);
             return $data ? $data : false;
         } catch (\Exception $e) {
             logError('分类搜索失败', [$e->getMessage()]);
