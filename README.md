@@ -47,8 +47,6 @@ $app->user->getUserByCode($code);
 
 - 普通用户
 
----
-
 ## Helpers方法
 
 ```php
@@ -59,7 +57,7 @@ getDinginfo($code)
 
 返回值为一个包含信息的对象
 
-```json
+```
 {
      'name'=>'汤海',
       'tel' =>'12312341234',
