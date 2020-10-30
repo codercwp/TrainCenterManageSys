@@ -4,15 +4,12 @@ namespace App\Http\Controllers\SupAdmin;
 
 use App\Http\Controllers\Controller;
 
-use App\Http\Requests\AddDeviceRequest;
-use App\Http\Requests\ExitNewRequest;
-use App\Http\Requests\GoBackRequest;
-use App\Http\Requests\RmNewRequest;
-use App\Http\Requests\SearchNewRequest;
+use App\Http\Requests\SupAdmin\Equipment\AddDeviceRequest;
+use App\Http\Requests\SupAdmin\Equipment\ExitNewRequest;
+use App\Http\Requests\SupAdmin\Equipment\GoBackRequest;
+use App\Http\Requests\SupAdmin\Equipment\RmNewRequest;
+use App\Http\Requests\SupAdmin\Equipment\SearchNewRequest;
 use App\Models\Equipment;
-
-;
-
 
 class EquipmentController extends Controller
 {

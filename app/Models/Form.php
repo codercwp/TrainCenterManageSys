@@ -40,8 +40,6 @@ class Form extends Model
         }
     }
 
-    public $primaryKey = "form_id";
-
     /**
      * 根据表id查找表单信息
      * @author tangshengyou

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\SupAdmin\Equipment;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class SearchNewRequest extends FormRequest
+class AddDeviceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,6 +27,9 @@ class SearchNewRequest extends FormRequest
     {
         return [
             'model' => 'required',
+            'equipment_name' => 'required',
+            'number' => 'required',
+            'annex' => 'required',
         ];
     }
     /**
