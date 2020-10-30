@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Approval\ApprovalHistory\Approval\ApprovalHistory\Approval\ApprovalHistory;
+namespace App\Http\Requests\Approval\ApprovalHistory;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
