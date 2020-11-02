@@ -162,7 +162,7 @@ class ShowController extends Controller
                     $j++;
                 }
             }else{
-                if ($data1[$i]['type_name'] == $type_name && $data1[$i]['form_status'] == $form_status){
+                if ($data1[$i]['type_id'] == $type_name && $data1[$i]['form_status'] == $form_status){
                         $data[$j]['form_id']=$data1[$i]['form_id'];
                         $data[$j]['form_status']=$data1[$i]['form_status'];
                         $data[$j]['type_id']=$data1[$i]['type_id'];
