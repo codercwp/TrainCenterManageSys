@@ -54,7 +54,7 @@ class Laboratory extends Model
     public static function dc_selectInfo($data){
         try {
             $data['laboratory_name']?
-                $rs = self::where('laboratory_name','like','%'.$data['name'].'%')
+                $rs = self::where('laboratory_name','like','%'.$data['laboratory_name'].'%')
                     ->paginate(5):
                 $rs = self::paginate(5);
             return $rs;
