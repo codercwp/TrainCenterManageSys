@@ -4,7 +4,7 @@ namespace App\Http\Controllers\SupAdmin;
 
 use App\Http\Controllers\Controller;
 
-use App\Http\Requests\SupAdmin\addInfoRequest;
+use App\Http\Requests\SupAdmin\LocationController\addInfoRequest;
 use App\Http\Requests\SupAdmin\findInfoRequest;
 use App\Models\Laboratory;
 use Illuminate\Http\Request;

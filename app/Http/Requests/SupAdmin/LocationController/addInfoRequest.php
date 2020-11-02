@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\SupAdmin;
+namespace App\Http\Requests\SupAdmin\LocationController;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
