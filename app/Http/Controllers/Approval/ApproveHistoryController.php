@@ -3,14 +3,11 @@
 namespace App\Http\Controllers\Approval;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
 use App\Http\Requests\Approval\ApprovalHistory\ReshowAllRequest;
 use App\Http\Requests\Approval\ApprovalHistory\ShowAllRequest;
 use App\Http\Requests\Approval\ApprovalHistory\SearchFormRequest;
 use App\Http\Requests\Approval\ApprovalHistory\SelectTypeRequest;
 
-use App\Models\Approve;
 use App\Models\Form;
 use App\Models\LaboratoryLoan;
 use App\Models\OpenLaboratoryLoan;

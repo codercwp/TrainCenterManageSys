@@ -30,6 +30,7 @@ $app->user->getUserByCode($code);
 
 相关返回值请查看 [钉钉开发文档](https://ding-doc.dingtalk.com/doc#/serverapi2/ege851)
 
+
 ## 组织架构权限
 
 超级管理员
