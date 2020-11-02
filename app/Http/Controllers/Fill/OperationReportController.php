@@ -11,7 +11,7 @@ use App\Models\Laboratory;
 use App\Models\LaboratoryOperationRecord;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\YieldFrom;
-use App\Http\Request\Fill\OperationReport\nameRequest;
+use App\Http\Requests\Fill\OperationReport\nameRequest;
 
 class OperationReportController extends Controller
 {
