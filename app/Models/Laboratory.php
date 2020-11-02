@@ -65,7 +65,6 @@ class Laboratory extends Model
         }
     }
 
-
     /*
      * 把所有实验室名称给前端
      * @author caiwenpin <github.com/codercwp>
@@ -185,6 +184,7 @@ class Laboratory extends Model
         }
     }
 
+<<<<<<< HEAD
     /**
      * @param $data
      * @return |null
@@ -202,6 +202,8 @@ class Laboratory extends Model
     }
 
 
+=======
+>>>>>>> 1dfbae9f76267b4bcbe3dad1484943137416b2b9
     /**
      * 系部展示
      * @author yuanshuxin <github.com/CoderYsx>

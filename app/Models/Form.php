@@ -21,6 +21,7 @@ class Form extends Model
     protected $table = "form";
     public $timestamps = true;
     protected $guarded = [];
+<<<<<<< HEAD
 
     /**
      * 实验室借用申请表页面展示
@@ -40,6 +41,11 @@ class Form extends Model
         }
     }
 
+=======
+    public $primaryKey = "form_id";
+
+    /**
+>>>>>>> 1dfbae9f76267b4bcbe3dad1484943137416b2b9
     /**
      * 根据表id查找表单信息
      * @author tangshengyou

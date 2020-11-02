@@ -9,6 +9,7 @@ class TeachingInspectionInfo extends Model
     protected $table = "teaching_inspection_info";
     public $timestamps = true;
     protected $guarded = [];
+<<<<<<< HEAD
 
 
     /**
@@ -41,6 +42,8 @@ class TeachingInspectionInfo extends Model
     }
 
 
+=======
+>>>>>>> 1dfbae9f76267b4bcbe3dad1484943137416b2b9
     /*
     * 展示id对应的表单
     * @author caiwenpin <github.com/codercwp>
@@ -104,6 +107,8 @@ class TeachingInspectionInfo extends Model
             return $result;
         } catch (\Exception $e) {
             logError('增加错误', [$e->getMessage()]);
+        }
+    }
 
         }
     }

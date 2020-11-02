@@ -112,5 +112,8 @@ class LaboratoryLoan extends Model
             return false;
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1dfbae9f76267b4bcbe3dad1484943137416b2b9
 }
