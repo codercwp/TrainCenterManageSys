@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Fill\OperationReport;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class nameRequest extends FormRequest
 {
